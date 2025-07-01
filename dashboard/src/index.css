@@ -1,0 +1,867 @@
+/* ============================
+   Top Bar (Scoped with .topbar-container)
+   ============================ */
+   .topbar-container .container.navbar {
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 20px;
+  }
+  
+  .topbar-container .header-left {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .topbar-container .nift,
+  .topbar-container .sensex {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .topbar-container .index {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .topbar-container .index-points,
+  .topbar-container .percent {
+    color: rgb(2, 154, 2);
+    /* margin-left: 0.9rem; */
+  }
+  .nav-link {
+    color: #424242;
+    padding: 9px 13px;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 8px;
+  }
+  
+  .nav-link:hover {
+    background: #f1f1f1;
+  }
+  
+  .active-menu {
+    color: orange !important; /* Text color */
+    border-radius: 5px;
+  }
+  
+  
+  /* ============================
+     Dashboard & Watchlist Styles
+     ============================ */
+  .watchlist-container {
+  width: 30%;
+  background-color: white;
+  margin: 1rem;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: visible; /* Remove scroll */
+  height: auto;      /* Let it expand naturally */
+}
+.doughnut-chart {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+    
+    .dashboard-container {
+      width: 100%;
+      min-height: 100vh; /* Ensures the container expands */
+      background-color: rgb(241, 241, 241);
+      display: flex;
+    }
+    
+    /* Search Bar */
+    .search-container {
+      border-bottom: 1px solid gray;
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 12px;
+      padding-bottom: 10px;
+    }
+    
+    .search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 1rem;
+    }
+    
+    .counts {
+      position: absolute;
+      right: 20px;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: rgb(158, 157, 157);
+    }
+    
+    /* Watchlist Items */
+    .list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      overflow-y: auto;
+      flex-grow: 1; /* Allows list to take remaining space */
+    }
+    
+    .watchlist-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding:  8px 10px;
+      border-bottom: 1px solid #ddd;
+      transition: background 0.2s ease-in-out;
+    }
+    
+    .watchlist-item:hover {
+      background: #f9f9f9;
+      cursor: pointer;
+    }
+    
+    /* Stock Details */
+    .stock-details {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    
+    /* Stock Name */
+    .stock-name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgb(71, 71, 71);
+    }
+    
+    /* Price and Percentage */
+    .stock-pricing {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    /* Profit & Loss Colors */
+    .profit {
+      color: green;
+      font-weight: 600;
+    }
+    
+    .loss {
+      color: red;
+      font-weight: 600;
+    }
+    
+    /* Icons */
+    .up-icon, .down-icon {
+      font-size: 1.2rem;
+    }
+
+
+
+    /* Watch list ACTIONS*/
+
+
+
+    .watchlist-actions {
+      position: absolute;
+      right: 10px;  /* Keeps it aligned to the right */
+      top: 50%;
+      transform: translateY(-50%); /* Centers it vertically */
+      display: flex;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.9); /* Slight background for visibility */
+      padding: 5px;
+      border-radius: 6px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15); /* Soft shadow */
+      z-index: 10;
+    }
+    
+    .watchlist-item {
+      position: relative; /* Ensures actions position correctly within each item */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      transition: background 0.2s ease-in-out;
+    }
+    
+    .watchlist-item:hover {
+      background: #f8f9fa; /* Light background on hover */
+    }
+    
+    .buy-button,
+    .sell-button,
+    .Analysis-button,
+    .more-button {
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      transition: all 0.2s ease-in-out;
+    }
+    
+    .buy-button {
+      background-color: #4caf50;
+      color: white;
+    }
+    
+    .buy-button:hover {
+      background-color: #45a049;
+    }
+    
+    .sell-button {
+      background-color: #f44336;
+      color: white;
+    }
+    
+    .sell-button:hover {
+      background-color: #d32f2f;
+    }
+    
+    .Analysis-button {
+      background-color: #616161;
+      color: white;
+    }
+    
+    .Analysis-button:hover {
+      background-color: #424242;
+    }
+    .more-button {
+      background-color: rgb(76, 76, 215);
+      color: white;
+    }
+    
+    
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .watchlist-container {
+        width: 100%;
+        height: auto;
+        margin: 0;
+      }
+    
+      .watchlist-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+      .stock-pricing {
+        margin-top: 5px;
+      }
+    }
+    
+  
+  .right-content {
+    height: 100vh;
+    width: 70%;
+    background-color: white;
+    margin: 1rem 1rem 1rem 0;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ============================
+     Summary & Equity/Holdings Section
+     ============================ */
+  .summary {
+    padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .username h6 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    margin-bottom: 0.5rem;
+  }
+  
+  .divider {
+    border: none;
+    border-top: 1px solid #c9c7c7;
+    margin: 10px 0;
+  }
+  
+  .equity-section,
+  .holdings-section {
+    padding: 1rem 0;
+  }
+  
+  .equity-section h5,
+  .holdings-section h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .equity-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .equity-data .first h3 {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #545353;
+    margin-bottom: 5px;
+  }
+  
+  .equity-data .second p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 2px 0;
+  }
+  
+  .equity-data .second span {
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .profit {
+    color: green;
+  }
+  .loss {
+    color: red;
+  }
+  
+  .profit small {
+    font-size: 0.8rem;
+    color: #28a745;
+    margin-left: 5px;
+  }
+  
+  /* ============================
+     Orders & Holdings Table Styles
+     ============================ */
+     .orders {
+      width: 100%;
+      height: 90vh;
+      overflow-y: auto; /* Enables vertical scrolling */
+      padding-bottom: 10px; /* Prevents last content from being cut off */
+  }
+  
+  /* No orders section */
+  .no-orders {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  /* Title Styling */
+  .title {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: rgb(71, 71, 71);
+      margin-bottom: 2%;
+  }
+  
+  /* Table Container */
+  .order-table {
+      max-height: 70vh; /* Ensures table does not overflow the page */
+      overflow-y: auto; /* Vertical scrolling inside the table */
+      overflow-x: auto; /* Horizontal scrolling for small screens */
+  }
+  
+  /* Table Styling */
+  .order-table table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px; /* Ensures proper column spacing */
+  }
+  
+  /* Table Rows and Borders */
+  .order-table tr {
+      border-top: 1.5px solid rgb(211, 211, 211);
+      border-bottom: 1.5px solid rgb(211, 211, 211);
+  }
+  
+  /* Table Header */
+  .order-table th {
+      text-align: right;
+      padding: 15px 10px;
+      color: rgb(145, 145, 145);
+      font-weight: 300;
+      font-size: 0.8rem;
+  }
+  
+  /* Align First Column to Left */
+  .order-table tr th:first-child,
+  .order-table tr td:first-child {
+      text-align: left;
+  }
+  
+  /* Highlighted Labels */
+  .order-table tr td:first-child p {
+      background: rgb(255, 197, 197);
+      color: rgb(233, 120, 120);
+      width: 50%;
+      text-align: center;
+      border-radius: 2px;
+  }
+  
+  /* Adjust Last Column Font Size */
+  .order-table tr td:last-child {
+      font-size: 0.6rem;
+  }
+  
+  /* Table Data Cells */
+  .order-table td {
+      padding: 10px 10px;
+      text-align: right;
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: rgb(73, 73, 73);
+  }
+  
+  /* Align Text Left */
+  .align-left {
+      text-align: left;
+  }
+  
+  /* Profit & Loss Colors */
+  .order-table td.profit {
+      color: rgb(72, 194, 55);
+  }
+  
+  .order-table td.loss {
+      color: rgb(250, 118, 78);
+  }
+  
+  /* Summary Row */
+  .row {
+    flex-wrap: wrap; /* Allows items to wrap within the container */
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Prevents overflow */
+    margin: 0 auto;
+}
+  
+  /* Column Styling */
+  .col {
+      flex-basis: 33%;
+  }
+  
+  /* Summary Heading */
+  .col h5 {
+      font-size: 1.8rem;
+      color: rgb(71, 71, 71);
+      font-weight: 300;
+  }
+  
+  /* Small Font Inside Heading */
+  .col h5 span {
+      font-weight: 300;
+      font-size: 0.9rem;
+  }
+  
+  /* Description Text */
+  .col p {
+      font-size: 0.8rem;
+      color: rgb(153, 153, 153);
+      font-weight: 300;
+      margin-top: 2%;
+  }
+  
+  /* Last Column Profit Styling */
+  .row .col:last-child h5 {
+      color: rgb(72, 194, 55);
+  }
+  
+  @media (max-width: 767px) {
+    .row {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%; /* Prevent overflow */
+        margin: 0 auto;
+        padding: 10px 0;
+        flex-wrap: wrap; /* Ensure no overflow */
+    }
+
+    .col {
+        width: 100%; /* Ensure it stays within the container */
+        padding: 10px 5px; /* Adjust spacing */
+        box-sizing: border-box; /* Ensure padding doesn’t increase width */
+    }
+
+    .col h5 {
+        font-size: 1.4rem; /* Reduce font size for better fit */
+        word-wrap: break-word;
+        max-width: 100%; /* Prevent text from spilling */
+    }
+
+    .col p {
+        font-size: 0.75rem;
+        margin: 5px 0;
+    }
+}
+/* Desktop View: Keep Three Columns Side by Side */
+@media (min-width: 768px) {
+  .col {
+      flex-basis: 33%; /* Keep three columns in a row */
+  }
+}
+
+/* General Styling */
+.col h5 {
+  font-size: 1.8rem;
+  color: rgb(71, 71, 71);
+  font-weight: 300;
+}
+
+.col h5 span {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.col p {
+  font-size: 0.8rem;
+  color: rgb(153, 153, 153);
+  font-weight: 300;
+  margin-top: 2%;
+}
+
+.row .col:last-child h5 {
+  color: rgb(72, 194, 55);
+}
+
+
+  /* ============================
+     Positions Design
+     ============================ */
+     .positions-container {
+      width: 100%;
+      padding: 1.5rem;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      overflow-y: auto; /* Enables vertical scrolling if content overflows */
+      max-height: 80vh; /* Prevents overflowing beyond viewport */
+    }
+    
+    /* Title Styling */
+    .title {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: rgb(71, 71, 71);
+      margin-bottom: 1rem;
+    }
+    
+    /* Table Styling */
+    .order-table {
+      width: 100%;
+      overflow-x: auto;
+    }
+    
+    .order-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .order-table th {
+      background: #f5f5f5;
+      padding: 14px;
+      font-weight: 600;
+      text-align: right;
+      font-size: 1rem;
+      color: #555;
+      border-bottom: 2px solid #ddd;
+    }
+    
+    .order-table td {
+      padding: 12px;
+      text-align: right;
+      font-size: 1rem;
+      color: rgb(73, 73, 73);
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .order-table tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    
+    .order-table tr:hover {
+      background: #f1f1f1;
+    }
+    
+    /* Align first column (Product) to left */
+    .order-table th:first-child,
+    .order-table td:first-child {
+      text-align: left;
+    }
+    
+    /* Profit and Loss Styling */
+    .profit {
+      color: green;
+      font-weight: 600;
+    }
+    
+    .loss {
+      color: red;
+      font-weight: 600;
+    }
+    
+    /* Responsive Table */
+    @media (max-width: 768px) {
+      .order-table table {
+        font-size: 0.9rem;
+      }
+      .order-table th,
+      .order-table td {
+        padding: 10px;
+      }
+    }
+    
+
+
+/* funds */
+
+/* Main Container */
+.funds-container {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+/* Header */
+.funds-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.funds-header p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgb(71, 71, 71);
+}
+
+.funds-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-green {
+  background: #28a745;
+  color: #fff;
+}
+
+.btn-blue {
+  background: #007bff;
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Sections */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.col {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Equity Section */
+.equity-section {
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.equity-section h4 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.funds-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: rgb(73, 73, 73);
+}
+
+.data p {
+  margin: 0;
+}
+
+.imp {
+  font-weight: 600;
+}
+
+.colored {
+  color: green;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+/* Commodity Section */
+.commodity-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f1f1f1;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .funds-header {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .funds-buttons {
+    margin-top: 10px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+  .funds-container {
+    box-sizing: border-box;
+    max-width: 95vw; /* Prevents overflow on small screens */
+    max-height: 90vh; /* Limits height to avoid vertical scrollbar */
+    margin-right: 15px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+  /* ============================
+     Responsive Design
+     ============================ */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .positions-container {
+    padding: 1rem;
+  }
+
+  .order-table th,
+  .order-table td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-table {
+    overflow-x: auto;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .order-table th,
+  .order-table td {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
+
+  @media (max-width: 480px) {
+    .summary {
+      padding: 1rem;
+    }
+    
+    .equity-data {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .header-left {
+      flex-direction: column;
+      gap: 5px;
+    }
+    /* Only target images inside the top bar container */
+    .topbar-container img {
+      margin-right: 10vw;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .watchlist-container {
+      display: none;
+    }
+    .right-content {
+      width: 100%;
+    }
+    .topbar-section {
+      display: none;
+    }
+    .navbar-toggler.hamburger {
+      right: 15px;
+    }
+    .topbar-container img {
+      margin-right: 50vw; /* Adjust as needed */
+    }
+    .right-content{
+      margin-left: 1rem;
+    }
+  }
+  

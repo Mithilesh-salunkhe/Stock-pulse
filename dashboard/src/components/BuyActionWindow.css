@@ -1,0 +1,121 @@
+.containerClass {
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  #buy-window {
+    cursor: move;
+  }
+  
+  .regular-order {
+    margin-bottom: 20px;
+  }
+  
+  .inputs fieldset {
+    border: none;
+    margin-bottom: 10px;
+  }
+  
+  .inputs legend {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .inputs input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .buttons span {
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .buttons .btn {
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .btn-blue {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-grey {
+    background-color: #ccc;
+    color: #333;
+  }
+
+  
+  /* Backdrop for dimming the background */
+.buy-action-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* The sliding container */
+.containerClass {
+  background: #fff;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 16px 16px ;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(100%);
+  animation: slideUpFromBottom 0.3s ease-out forwards;
+}
+
+/* Slide-up animation */
+@keyframes slideUpFromBottom {
+  to {
+    transform: translateY(0%);
+  }
+}
+
+/* Optional button styles (if not already styled) */
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-blue {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.btn-grey {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.me-4 {
+  margin-right: 1rem;
+}
+  
